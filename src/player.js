@@ -14,12 +14,17 @@ const takeTurn = () => {
 */
 
 class Player {
-  constructor(pin) {
+  constructor(pin, board) {
     this.pin = pin;
+    this.board = board;
   }
 
   getPin() {
     return this.pin;
+  }
+
+  takeTurn() {
+    this.board.placePin(this.pin, 0);
   }
 }
 
