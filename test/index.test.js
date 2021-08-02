@@ -1,6 +1,6 @@
 const { ticTacToe } = require('../src/index');
 
-describe('Game Board Creation phase', () => {
+describe.skip('Game Board Creation phase', () => {
   it('should print a title, empty tic-tac-toe board and status message', () => {
     const expectedTitle = 'Game Board Creation...';
     const expectedStatusMsg =
@@ -22,7 +22,7 @@ describe('Game Board Creation phase', () => {
   });
 });
 
-describe('Player X wins with a vertical line in first column', () => {
+describe.skip('Player X wins with a vertical line in first column', () => {
   const mathRandomSpy = jest.spyOn(Math, 'random');
 
   it(`should print a title, a tic-tac-toe board with 3 vertical X's in the first column and a status message`, () => {

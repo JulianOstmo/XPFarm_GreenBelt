@@ -3,10 +3,14 @@
   WHEN Horizontal victory (top row) for Player X
   EXPECT output to be an array of printed moves
 
-🚧 should be split up into Board, Player and Game files
-- board should render on creation
-  - renderBoard function broken (causing infinite loop)
+🚧 should be split up into:
+- Game files
+✅  Board
+  ✅  board should render on creation
+  ✅  renderBoard function broken (causing infinite loop)
+- Player
 
 
 # Tech Debt
 - worthless tests
+- might be worth using classes
