@@ -19,6 +19,7 @@ const gameCreation = () => {
 const takeTurn = () => {
   let selectedCell;
 
+  // FIXME: infinite loop happening here
   while (selectedCell) {
     const position = Math.floor(Math.random * 10);
 
@@ -50,9 +51,10 @@ const render = () => {
 const ticTacToe = () => {
   gameCreation();
 
-  gameLog.push(render());
+  // gameLog.push(render());
 
-  while (!gameWinner) {
+  /*
+  while (!gameWinner && gameLog.length < 2) {
     // player takes turn
     const position = takeTurn();
     boardArray[position] = currentPlayer;
@@ -67,6 +69,7 @@ const ticTacToe = () => {
     gameWinner = draw;
     gameLog.push(render());
   }
+  */
 
   return gameLog;
 };

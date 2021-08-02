@@ -1,4 +1,4 @@
-const { ticTacToe } = require('../src');
+const { ticTacToe } = require('../src/index');
 
 describe('Game Board Creation phase', () => {
   it('should print a title, empty tic-tac-toe board and status message', () => {
