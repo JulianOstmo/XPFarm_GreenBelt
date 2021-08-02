@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPO_NAME="$1"
-TEMPLATE_REPO="JulianOstmo/node-starter"
+TEMPLATE_REPO="JulianOstmo/XPFarm_GreenBelt"
 SONARCLOUD_TOKEN="$2"
 
 # Check input parameters
