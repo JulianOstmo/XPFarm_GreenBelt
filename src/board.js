@@ -11,6 +11,10 @@ class Board {
     return [topRow, spacer, middleRow, spacer, bottomRow, '\n'];
   }
 
+  getSquare(position) {
+    return this.squares[position];
+  }
+
   placePin(pin, position) {
     this.squares[position] = pin;
   }

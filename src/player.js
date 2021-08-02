@@ -23,8 +23,23 @@ class Player {
     return this.pin;
   }
 
+  selectPosition() {
+    let selectedPosition;
+
+    while (selectedPosition === undefined) {
+      const position = Math.floor(Math.random() * 10);
+
+      if (this.board.getSquare(position) === ' ') {
+        selectedPosition = position;
+      }
+    }
+
+    return selectedPosition;
+  }
+
   takeTurn() {
-    this.board.placePin(this.pin, 0);
+    const position = this.selectPosition();
+    this.board.placePin(this.pin, position);
   }
 }
 

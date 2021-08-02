@@ -17,7 +17,8 @@
   ✅ GIVEN a TicTacToe Player
   ✅ WHEN the Player is initialised
       THEN their pin is set
-  🚧 WHEN the Player takes a turn
+✅ Delete old index file and test
+   WHEN the Player takes a turn
       THEN their pin is placed on the board
 
 # Tech Debt

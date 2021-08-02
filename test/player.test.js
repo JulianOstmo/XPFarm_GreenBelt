@@ -19,13 +19,34 @@ describe('GIVEN a TicTacToe Player', () => {
   });
 
   describe('WHEN the Player takes a turn', () => {
+    beforeEach(() => {
+      jest.restoreAllMocks();
+    });
+
     it('THEN they place their pin in the top left corner of the board', () => {
+      jest.spyOn(global.Math, 'random').mockReturnValue(0.027033724160359318);
       const PIN = 'X';
       const board = new Board();
       const player = new Player(PIN, board);
       player.takeTurn();
       expect(board.render()).toEqual([
         'X| | ',
+        '-+-+-',
+        ' | | ',
+        '-+-+-',
+        ' | | ',
+        '\n',
+      ]);
+    });
+
+    it('THEN they place their pin in the top middle square of the board', () => {
+      jest.spyOn(global.Math, 'random').mockReturnValue(0.10236847063320464);
+      const PIN = 'X';
+      const board = new Board();
+      const player = new Player(PIN, board);
+      player.takeTurn();
+      expect(board.render()).toEqual([
+        ' |X| ',
         '-+-+-',
         ' | | ',
         '-+-+-',
