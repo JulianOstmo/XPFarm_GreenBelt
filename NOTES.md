@@ -11,8 +11,8 @@
 - Player
 
 # Pomodoro 2
-- Create Player files
-- Delete old index file and test
+✅  Create Player files
+🚧 Delete old index file and test
 - Player tests:
   - GIVEN a TicTacToe Player
     - WHEN the Player is initialised
