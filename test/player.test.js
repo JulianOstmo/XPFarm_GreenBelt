@@ -1,3 +1,4 @@
+const Board = require('../src/board');
 const Player = require('../src/player');
 
 /*
@@ -14,6 +15,23 @@ describe('GIVEN a TicTacToe Player', () => {
       const PIN = 'X';
       const player = new Player(PIN);
       expect(player.getPin()).toEqual(PIN);
+    });
+  });
+
+  describe('WHEN the Player takes a turn', () => {
+    it('THEN they place their pin in the top left corner of the board', () => {
+      const PIN = 'X';
+      const board = new Board();
+      const player = new Player(PIN, board);
+      player.takeTurn();
+      expect(board.render()).toEqual([
+        'X| | ',
+        '-+-+-',
+        ' | | ',
+        '-+-+-',
+        ' | | ',
+        '\n',
+      ]);
     });
   });
 });
