@@ -10,6 +10,15 @@
   ✅  renderBoard function broken (causing infinite loop)
 - Player
 
+# Pomodoro 2
+- Create Player files
+- Delete old index file and test
+- Player tests:
+  - GIVEN a TicTacToe Player
+    - WHEN the Player is initialised
+      - THEN their pin is set
+    - WHEN the Player takes a turn
+      - THEN their pin is placed on the board
 
 # Tech Debt
 - worthless tests
