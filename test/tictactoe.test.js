@@ -1,4 +1,4 @@
-const { ticTacToe } = require('../src');
+const { ticTacToe } = require('../src/tictactoe');
 
 describe('GIVEN the TicTacToe game', () => {
   describe('WHEN Player X wins with a horizontal victory along the top row', () => {

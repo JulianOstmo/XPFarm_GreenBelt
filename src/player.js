@@ -1,3 +1,4 @@
+/*
 const takeTurn = () => {
   let selectedCell;
 
@@ -10,3 +11,16 @@ const takeTurn = () => {
     }
   }
 };
+*/
+
+class Player {
+  constructor(pin) {
+    this.pin = pin;
+  }
+
+  getPin() {
+    return this.pin;
+  }
+}
+
+module.exports = Player;
