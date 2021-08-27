@@ -30,8 +30,8 @@ should be split up into:
   WHEN Player X has already gone and Player O takes their first turn
   THEN they place their pin in the bottom middle square of the board
 ✅ refactor Math spies in tests to mock return value is smaller
-- tictactoe:
-  - initialisation: output array with empty board, title & subtitle
+🚧 tictactoe:
+  🚧 initialisation: output array with empty board, title & subtitle
   - hardcode Player X wins with a horizontal victory along the top row
   - add 'PLAYER X WON!' to output array
 - update OutsideIn test with mocks of Players taking turns:
