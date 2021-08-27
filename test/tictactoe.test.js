@@ -1,16 +1,17 @@
-const { ticTacToe } = require('../src/tictactoe');
+const TicTacToe = require('../src/tictactoe');
 
 describe('GIVEN the TicTacToe game', () => {
   describe('WHEN the game initialises', () => {
     it('THEN the game log should begin with the start game message', () => {
-      TicTacToe ticTacToe = new TicTacToe();
+      const ticTacToe = new TicTacToe();
       expect(ticTacToe.log()[0]).toEqual('Game Board Creation...');
     });
   });
 
   describe('WHEN Player X wins with a horizontal victory along the top row', () => {
     it('THEN an an array of printed moved should be returned', () => {
-      expect(ticTacToe()).toEqual([
+      const ticTacToe = new TicTacToe();
+      expect(ticTacToe.log()).toEqual([
         'Game Board Creation...',
         ' | | ',
         '-+-+-',
