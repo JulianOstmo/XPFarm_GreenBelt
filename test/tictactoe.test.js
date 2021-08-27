@@ -6,6 +6,19 @@ describe('GIVEN the TicTacToe game', () => {
       const ticTacToe = new TicTacToe();
       expect(ticTacToe.log()[0]).toEqual('Game Board Creation...');
     });
+
+    it('THEN the game log should contain an empty board', () => {
+      const ticTacToe = new TicTacToe();
+
+      expect(ticTacToe.log().slice(1, 5)).toEqual([
+        ' | | ',
+        '-+-+-',
+        ' | | ',
+        '-+-+-',
+        ' | | ',
+        '\n',
+      ]);
+    });
   });
 
   describe('WHEN Player X wins with a horizontal victory along the top row', () => {
