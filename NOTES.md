@@ -22,9 +22,9 @@ should be split up into:
       THEN their pin is placed on the board
 
 # Pomodoro 3
-🚧 Rename `selectPosition` to `selectRandomPosition`
-- Refactor (reduce DRY) Player.test.js
-- Add test to Player.test.js for Player O taking their first turn
+✅ Rename `selectPosition` to `selectRandomPosition`
+✅ Refactor (reduce DRY) Player.test.js
+  Add test to Player.test.js for Player O taking their first turn
   (second turn of the game)
   GIVEN a TicTacToe Player
   WHEN Player X has already gone and Player O takes their first turn
@@ -38,5 +38,4 @@ should be split up into:
 -
 
 # Tech Debt
-- Line 32 of Player.js not covered (add test for Player O taking their first turn)
 - refactor Math spies in tests to mock return value is smaller

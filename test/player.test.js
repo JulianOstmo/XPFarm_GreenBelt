@@ -55,4 +55,33 @@ describe('GIVEN a TicTacToe Player', () => {
       ]);
     });
   });
+
+  describe('WHEN Player X has taken their turn and now Player O takes their first turn', () => {
+    it('THEN Player O searches the board for an empty position and places their pin in the bottom middle square of the board', () => {
+      const board = new Board();
+      const playerX = new Player('X', board);
+      const playerO = new Player('O', board);
+
+      jest
+        .spyOn(global.Math, 'random')
+        .mockReturnValueOnce(0.027033724160359318);
+      playerX.takeTurn();
+
+      jest
+        .spyOn(global.Math, 'random')
+        .mockReturnValueOnce(0.027033724160359318);
+      jest
+        .spyOn(global.Math, 'random')
+        .mockReturnValueOnce(0.70236847063320464);
+      playerO.takeTurn();
+      expect(board.render()).toEqual([
+        'X| | ',
+        '-+-+-',
+        ' | | ',
+        '-+-+-',
+        ' |O| ',
+        '\n',
+      ]);
+    });
+  });
 });
