@@ -1,42 +1,48 @@
 const Board = require('./board');
-
-// const ticTacToe = () => {
-//   // gameCreation();
-
-//   // gameLog.push(render());
-
-//   /*
-//   while (!gameWinner && gameLog.length < 2) {
-//     // player takes turn
-//     const position = takeTurn();
-//     boardArray[position] = currentPlayer;
-
-//     // function to check win scenarios and update gameWinner if game won
-
-//     // else switch players and continue the game
-
-//     // check for draw / full board
-//     const draw = boardArray.every((cell) => Boolean(cell));
-
-//     gameWinner = draw;
-//     gameLog.push(render());
-//   }
-//   */
-
-//   return gameLog;
-// };
+const Player = require('./player');
 
 class TicTacToe {
   constructor() {
     this.gameLog = ['Game Board Creation...'];
-    const board = new Board();
-    this.gameLog = [...this.gameLog, ...board.render()];
-    this.gameLog.push('Board Created.');
-    this.gameLog.push('The game will start with player X');
+    this.board = new Board();
+    this.gameLog = [
+      ...this.gameLog,
+      ...this.board.render(),
+      'Board Created.',
+      'The game will start with player X',
+      '',
+    ];
+
+    this.playerX = new Player('X', this.board);
+    this.playerO = new Player('O', this.board);
   }
 
   log() {
     return this.gameLog;
+  }
+
+  playGame() {
+    this.gameLog.push('Player X:');
+    this.playerX.takeTurn();
+    this.gameLog = [...this.gameLog, ...this.board.render()];
+
+    this.gameLog.push('Player O:');
+    this.playerO.takeTurn();
+    this.gameLog = [...this.gameLog, ...this.board.render()];
+
+    this.gameLog.push('Player X:');
+    this.playerX.takeTurn();
+    this.gameLog = [...this.gameLog, ...this.board.render()];
+
+    this.gameLog.push('Player O:');
+    this.playerO.takeTurn();
+    this.gameLog = [...this.gameLog, ...this.board.render()];
+
+    this.gameLog.push('Player X:');
+    this.playerX.takeTurn();
+    this.gameLog = [...this.gameLog, ...this.board.render()];
+
+    this.gameLog.push('PLAYER X WON!');
   }
 }
 

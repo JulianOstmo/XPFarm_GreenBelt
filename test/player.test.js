@@ -1,19 +1,8 @@
 const Board = require('../src/board');
 const Player = require('../src/player');
+const { positions, selectRandomPositionMock } = require('./test.utils');
 
-const TOP_LEFT = 0.02;
-const TOP_MID = 0.1;
-const TOP_RIGHT = 0.2;
-const MID_LEFT = 0.3;
-const MID_MID = 0.4;
-const MID_RIGHT = 0.5;
-const BOTTOM_LEFT = 0.6;
-const BOTTOM_MID = 0.7;
-const BOTTOM_RIGHT = 0.8;
-
-const selectRandomPositionMock = (position) => {
-  jest.spyOn(global.Math, 'random').mockReturnValueOnce(position);
-};
+const { TOP_LEFT, TOP_MID, BOTTOM_MID } = positions;
 
 describe('GIVEN a TicTacToe Player', () => {
   describe('WHEN the Player is initialised', () => {
@@ -25,12 +14,12 @@ describe('GIVEN a TicTacToe Player', () => {
   });
 
   describe('WHEN X Player takes their first turn', () => {
-    beforeEach(() => {
+    afterEach(() => {
       jest.restoreAllMocks();
     });
 
     it('THEN they place their pin in the top left corner of the board', () => {
-      selectRandomPositionMock(TOP_LEFT);
+      selectRandomPositionMock([TOP_LEFT]);
       const PIN = 'X';
       const board = new Board();
       const player = new Player(PIN, board);
@@ -41,12 +30,12 @@ describe('GIVEN a TicTacToe Player', () => {
         ' | | ',
         '-+-+-',
         ' | | ',
-        '\n',
+        '',
       ]);
     });
 
     it('THEN they place their pin in the top middle square of the board', () => {
-      selectRandomPositionMock(TOP_MID);
+      selectRandomPositionMock([TOP_MID]);
       const PIN = 'X';
       const board = new Board();
       const player = new Player(PIN, board);
@@ -57,7 +46,7 @@ describe('GIVEN a TicTacToe Player', () => {
         ' | | ',
         '-+-+-',
         ' | | ',
-        '\n',
+        '',
       ]);
     });
   });
@@ -68,19 +57,17 @@ describe('GIVEN a TicTacToe Player', () => {
       const playerX = new Player('X', board);
       const playerO = new Player('O', board);
 
-      selectRandomPositionMock(TOP_LEFT);
+      selectRandomPositionMock([TOP_LEFT, TOP_LEFT, BOTTOM_MID]);
       playerX.takeTurn();
-
-      selectRandomPositionMock(TOP_LEFT);
-      selectRandomPositionMock(BOTTOM_MID);
       playerO.takeTurn();
+
       expect(board.render()).toEqual([
         'X| | ',
         '-+-+-',
         ' | | ',
         '-+-+-',
         ' |O| ',
-        '\n',
+        '',
       ]);
     });
   });

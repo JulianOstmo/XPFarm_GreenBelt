@@ -10,7 +10,7 @@ describe('GIVEN a TicTacToe board', () => {
         ' | | ',
         '-+-+-',
         ' | | ',
-        '\n',
+        '',
       ]);
     });
   });
@@ -25,7 +25,7 @@ describe('GIVEN a TicTacToe board', () => {
         ' | | ',
         '-+-+-',
         ' | | ',
-        '\n',
+        '',
       ]);
     });
   });

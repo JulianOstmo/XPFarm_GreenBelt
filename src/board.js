@@ -8,7 +8,7 @@ class Board {
     const middleRow = `${this.squares[3]}|${this.squares[4]}|${this.squares[5]}`;
     const bottomRow = `${this.squares[6]}|${this.squares[7]}|${this.squares[8]}`;
     const spacer = '-+-+-';
-    return [topRow, spacer, middleRow, spacer, bottomRow, '\n'];
+    return [topRow, spacer, middleRow, spacer, bottomRow, ''];
   }
 
   getSquare(position) {
