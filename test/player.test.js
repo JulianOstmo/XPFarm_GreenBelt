@@ -18,7 +18,7 @@ describe('GIVEN a TicTacToe Player', () => {
     });
   });
 
-  describe('WHEN the Player takes a turn', () => {
+  describe('WHEN X Player takes their first turn', () => {
     beforeEach(() => {
       jest.restoreAllMocks();
     });

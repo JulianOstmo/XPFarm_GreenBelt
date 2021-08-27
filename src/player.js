@@ -23,7 +23,7 @@ class Player {
     return this.pin;
   }
 
-  selectPosition() {
+  selectRandomPosition() {
     let selectedPosition;
 
     while (selectedPosition === undefined) {
@@ -38,7 +38,7 @@ class Player {
   }
 
   takeTurn() {
-    const position = this.selectPosition();
+    const position = this.selectRandomPosition();
     this.board.placePin(this.pin, position);
   }
 }
