@@ -1,13 +1,19 @@
 const Board = require('../src/board');
 const Player = require('../src/player');
 
-/*
-const mathRandomSpy = jest.spyOn(Math, 'random');
-const moves = [0.1, 0.5, 0.4, 0.9, 0.7];
-moves.forEach((move) => {
-  mathRandomSpy.mockResolvedValueOnce(move);
-});
-*/
+const TOP_LEFT = 0.02;
+const TOP_MID = 0.1;
+const TOP_RIGHT = 0.2;
+const MID_LEFT = 0.3;
+const MID_MID = 0.4;
+const MID_RIGHT = 0.5;
+const BOTTOM_LEFT = 0.6;
+const BOTTOM_MID = 0.7;
+const BOTTOM_RIGHT = 0.8;
+
+const selectRandomPositionMock = (position) => {
+  jest.spyOn(global.Math, 'random').mockReturnValueOnce(position);
+};
 
 describe('GIVEN a TicTacToe Player', () => {
   describe('WHEN the Player is initialised', () => {
@@ -24,7 +30,7 @@ describe('GIVEN a TicTacToe Player', () => {
     });
 
     it('THEN they place their pin in the top left corner of the board', () => {
-      jest.spyOn(global.Math, 'random').mockReturnValue(0.027033724160359318);
+      selectRandomPositionMock(TOP_LEFT);
       const PIN = 'X';
       const board = new Board();
       const player = new Player(PIN, board);
@@ -40,7 +46,7 @@ describe('GIVEN a TicTacToe Player', () => {
     });
 
     it('THEN they place their pin in the top middle square of the board', () => {
-      jest.spyOn(global.Math, 'random').mockReturnValue(0.10236847063320464);
+      selectRandomPositionMock(TOP_MID);
       const PIN = 'X';
       const board = new Board();
       const player = new Player(PIN, board);
@@ -62,17 +68,11 @@ describe('GIVEN a TicTacToe Player', () => {
       const playerX = new Player('X', board);
       const playerO = new Player('O', board);
 
-      jest
-        .spyOn(global.Math, 'random')
-        .mockReturnValueOnce(0.027033724160359318);
+      selectRandomPositionMock(TOP_LEFT);
       playerX.takeTurn();
 
-      jest
-        .spyOn(global.Math, 'random')
-        .mockReturnValueOnce(0.027033724160359318);
-      jest
-        .spyOn(global.Math, 'random')
-        .mockReturnValueOnce(0.70236847063320464);
+      selectRandomPositionMock(TOP_LEFT);
+      selectRandomPositionMock(BOTTOM_MID);
       playerO.takeTurn();
       expect(board.render()).toEqual([
         'X| | ',
