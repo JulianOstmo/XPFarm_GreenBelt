@@ -1,4 +1,4 @@
-// const gameLog = [];
+const Board = require('./board');
 
 // const ticTacToe = () => {
 //   // gameCreation();
@@ -29,6 +29,10 @@
 class TicTacToe {
   constructor() {
     this.gameLog = ['Game Board Creation...'];
+    const board = new Board();
+    this.gameLog = [...this.gameLog, ...board.render()];
+    this.gameLog.push('Board Created.');
+    this.gameLog.push('The game will start with player X');
   }
 
   log() {

@@ -9,14 +9,21 @@ describe('GIVEN the TicTacToe game', () => {
 
     it('THEN the game log should contain an empty board', () => {
       const ticTacToe = new TicTacToe();
-
-      expect(ticTacToe.log().slice(1, 5)).toEqual([
+      expect(ticTacToe.log().slice(1, 7)).toEqual([
         ' | | ',
         '-+-+-',
         ' | | ',
         '-+-+-',
         ' | | ',
         '\n',
+      ]);
+    });
+
+    it('THEN the game log should state the game is ready and player X starts first', () => {
+      const ticTacToe = new TicTacToe();
+      expect(ticTacToe.log().slice(7, 9)).toEqual([
+        'Board Created.',
+        'The game will start with player X',
       ]);
     });
   });
