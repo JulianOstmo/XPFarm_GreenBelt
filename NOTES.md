@@ -37,6 +37,13 @@ should be split up into:
 ✅ update OutsideIn test with mocks of Players taking turns:
     Player.selectRandomPosition (or Math.random)
 
+# Pomodoro 4
+- ✅ Ensure Github Actions and SonarCloud are setup and then Push code
+- ✅ Move Outside-In output array to fixture file
+- Create new Outside-In fixture: Player O wins with vertical victory in left column
+- refactor `playGame`:
+  - alternate between players taking turns
+  - check for win condition
+
 # Tech Debt
-- Move Outside-In output array to fixture file
 - Player X wins with a horizontal victory along the top row tests could be refactored to use `test.each`

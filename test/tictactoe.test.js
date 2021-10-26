@@ -1,4 +1,7 @@
 const TicTacToe = require('../src/tictactoe');
+const {
+  PLAYER_X_WINS_HORIZONTAL_VICTORY_TOP_ROW,
+} = require('./fixtures/e2e.fixture');
 const { positions, selectRandomPositionMock } = require('./test.utils');
 
 const { TOP_LEFT, TOP_MID, TOP_RIGHT, MID_MID, BOTTOM_LEFT } = positions;
@@ -150,54 +153,7 @@ describe('GIVEN the TicTacToe game', () => {
         TOP_RIGHT,
       ]);
       ticTacToe.playGame();
-      expect(ticTacToe.log()).toEqual([
-        'Game Board Creation...',
-        ' | | ',
-        '-+-+-',
-        ' | | ',
-        '-+-+-',
-        ' | | ',
-        '',
-        'Board Created.',
-        'The game will start with player X',
-        '',
-        'Player X:',
-        'X| | ',
-        '-+-+-',
-        ' | | ',
-        '-+-+-',
-        ' | | ',
-        '',
-        'Player O:',
-        'X| | ',
-        '-+-+-',
-        ' |O| ',
-        '-+-+-',
-        ' | | ',
-        '',
-        'Player X:',
-        'X|X| ',
-        '-+-+-',
-        ' |O| ',
-        '-+-+-',
-        ' | | ',
-        '',
-        'Player O:',
-        'X|X| ',
-        '-+-+-',
-        ' |O| ',
-        '-+-+-',
-        'O| | ',
-        '',
-        'Player X:',
-        'X|X|X',
-        '-+-+-',
-        ' |O| ',
-        '-+-+-',
-        'O| | ',
-        '',
-        'PLAYER X WON!',
-      ]);
+      expect(ticTacToe.log()).toEqual(PLAYER_X_WINS_HORIZONTAL_VICTORY_TOP_ROW);
     });
   });
 });
